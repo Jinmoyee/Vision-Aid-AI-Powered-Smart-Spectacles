@@ -99,7 +99,7 @@ RPi.GPIO
 
 ```plaintext
 project/
-├── main.py
+├── data/combo/Final_Object_Detection_Scene_Classify.py
 ├── categories_places365.txt   # auto-downloaded
 ├── frame.jpg                  # captured image
 ├── detection.txt              # generated output
