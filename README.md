@@ -1,109 +1,105 @@
-# VISION AID: AI-Powered Smart Spectacle for the Blind
+# 🧠 Smart Object & Scene Detection with Distance (Raspberry Pi 4)
 
-## 📌 Project Overview
-VISION AID is an advanced AI-powered smart spectacle designed to assist visually impaired individuals. It leverages computer vision and object detection using YOLO (You Only Look Once) models, along with real-time distance measurement using an ultrasonic sensor. The system provides audio feedback via a buzzer and text-to-speech (TTS) to convey information about the user's surroundings, enhancing their ability to navigate safely and independently.
+This project implements a **vision-based assistive system** on **Raspberry Pi 4** that performs:
 
-## 🧰 Hardware Components
-This project is built using the following hardware components:
+- 📷 Object Detection (COCO classes)
+- 🌍 Scene Classification (Places365)
+- 📏 Distance Measurement using Ultrasonic Sensor (HC-SR04)
+- 📝 Natural language description of surroundings
 
-- **Raspberry Pi 4 Model B**: The central computing unit to process data and run object detection.
-- **USB Camera**: Captures real-time video for object detection.
-- **Ultrasonic Sensor (HC-SR04)**: Measures the distance to nearby objects.
-- **Piezo Buzzer**: Provides audio alerts when objects are detected within a predefined distance.
-- **Headphones (via audio jack)**: Outputs voice feedback for detected objects and distance.
+The system captures an image using a **USB webcam**, detects objects and scene context using **PyTorch deep learning models**, measures distance using an ultrasonic sensor, and outputs a **human-readable sentence**.  
+Audio output can be played through **connected headphones**.
 
-## 🗂️ Software & Libraries
-The project utilizes several essential Python libraries:
-
-- **OpenCV**: For capturing and processing images.
-- **Ultralytics YOLO**: For real-time object detection.
-- **RPi.GPIO**: For controlling the Raspberry Pi's GPIO pins.
-- **gTTS (Google Text-to-Speech)**: For voice output (when an internet connection is available).
-- **Festival TTS**: For offline voice output (when no internet connection is available).
-- **cvzone**: For easy drawing and annotation on image frames.
-
-## 🎯 Key Features
-1. **Object Detection**: Identifies objects like people, cars, and more using a custom-trained YOLO model.
-2. **Distance Measurement**: Continuously measures the distance between the user and nearby objects using an ultrasonic sensor.
-3. **Audio Feedback**: Describes the environment using TTS and provides distance alerts through a buzzer.
-4. **Dual TTS System**: Uses Google TTS when the internet is available; falls back to Festival TTS for offline use.
-5. **Real-Time Processing**: Captures and processes live video feed, providing immediate assistance.
-
-## 📊 System Workflow
-1. The USB camera captures a live video feed.
-2. The YOLO model detects objects and identifies their class.
-3. Detected objects are counted and announced using TTS.
-4. The ultrasonic sensor measures the distance to the closest object.
-5. If an object is within a predefined range (e.g., 30 cm), the buzzer alerts the user.
-
-## 🛠️ Setup Instructions
-### 1. Hardware Setup
-- Connect the ultrasonic sensor to the Raspberry Pi GPIO pins:
-  - **TRIG**: GPIO 18
-  - **ECHO**: GPIO 15
-- Connect the piezo buzzer to **GPIO 16**.
-- Attach the USB camera to the Raspberry Pi.
-- Ensure the Raspberry Pi is connected to a speaker or headphones via the audio jack.
-
-### 2. Software Installation
-1. Update the Raspberry Pi:
-    ```bash
-    sudo apt update && sudo apt upgrade -y
-    ```
-
-2. Install required libraries:
-    ```bash
-    sudo apt install python3-pip festival mpg321
-    pip install opencv-python ultralytics cvzone RPi.GPIO requests gtts
-    ```
-
-3. Clone the project repository from GitHub:
-    ```bash
-    git clone https://github.com/yourusername/VISION-AID.git
-    cd VISION-AID
-    ```
-
-4. Ensure the YOLO model (e.g., `best.pt`) is placed in the project directory.
-
-### 3. Run the Program
-Execute the Python script:
-
-```bash
-python3 object_detection.py
-```
-
-### 4. User Controls
-- **Audio Output**: Provides object names and proximity.
-- **Buzzer Alert**: Beeps when an object is closer than 30 cm.
-- **Quit Program**: Press `q` on the keyboard.
-
-## 🧪 Customization
-- **Adjust Detection Sensitivity**: Modify the `THRESHOLD_DISTANCE_CM` value to change the buzzer's trigger range.
-- **Change YOLO Model**: Replace the `best.pt` file with any compatible YOLOv8 model.
-- **Modify Object Names**: Customize object categories by adjusting the YOLO model classes.
-
-## 📌 Troubleshooting
-1. **Camera Not Detected**: Ensure the USB camera is connected and enabled:
-    ```bash
-    ls /dev/video0
-    ```
-2. **No Sound Output**: Verify the speaker or headphones are connected and adjust volume:
-    ```bash
-    alsamixer
-    ```
-3. **Permission Issues**: Run the script with superuser privileges if needed:
-    ```bash
-    sudo python3 object_detection.py
-    ```
-
-## 📖 Future Enhancements
-- Integrate GPS for navigation assistance.
-- Add voice-command capabilities for better user interaction.
-- Enhance object detection with multiple model support.
-
-## 🤝 Contribution
-Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+This project is suitable for:
+- Assistive technology for visually impaired users
+- Smart surveillance
+- Embedded AI systems
+- Raspberry Pi AI projects
 
 ---
 
-🚀 **Empowering Vision, Enabling Independence**
+## 🚀 Features
+
+- Faster R-CNN (ResNet50 FPN) for object detection
+- ResNet50 (Places365) for scene classification
+- Ultrasonic distance measurement (HC-SR04)
+- Automatic download of scene labels
+- Outputs result to terminal and `detection.txt`
+- Works fully offline after setup
+
+---
+
+## 🧰 Hardware Requirements
+
+| Component | Description |
+|--------|-------------|
+| Raspberry Pi 4 | 4GB RAM recommended |
+| USB Webcam | Any UVC-compatible webcam |
+| Ultrasonic Sensor | HC-SR04 |
+| Headphones / Earphones | Connected via 3.5mm jack or USB |
+| Jumper Wires | Male–Female |
+| Breadboard | Optional |
+
+---
+
+## 🔌 Ultrasonic Sensor Wiring (HC-SR04)
+
+| HC-SR04 Pin | Raspberry Pi GPIO |
+|-----------|-------------------|
+| VCC | 5V |
+| GND | GND |
+| TRIG | GPIO 23 |
+| ECHO | GPIO 24 ⚠️ (Use voltage divider) |
+
+⚠️ **IMPORTANT:**  
+The Echo pin outputs **5V**. Use a **voltage divider (1kΩ + 2kΩ)** to reduce it to **3.3V** for Raspberry Pi safety.
+
+---
+
+## 🖥️ Software Requirements
+
+- Raspberry Pi OS (64-bit recommended)
+- Python 3.8+
+- Internet (only for first-time model & label download)
+
+---
+
+## 📦 Required Python Libraries
+
+Install system dependencies first:
+
+```bash
+sudo apt update
+sudo apt install -y python3-pip python3-opencv libatlas-base-dev espeak ffmpeg
+```
+
+## Install System Dependencies
+sudo apt install -y \
+python3-pip \
+python3-opencv \
+libatlas-base-dev \
+ffmpeg \
+espeak
+
+
+## Upgrade pip
+pip3 install --upgrade pip
+
+## 📦 Python Package Installation
+
+pip3 install \
+torch \
+torchvision \
+pillow \
+numpy \
+opencv-python \
+RPi.GPIO
+
+##📁 Project Structure
+project/
+│── main.py
+│── categories_places365.txt   (auto-downloaded)
+│── frame.jpg                  (captured image)
+│── detection.txt              (generated output)
+│── README.md
+
