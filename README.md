@@ -51,9 +51,6 @@ This project is suitable for:
 | TRIG | GPIO 23 |
 | ECHO | GPIO 24 ⚠️ (Use voltage divider) |
 
-⚠️ **IMPORTANT:**  
-The Echo pin outputs **5V**. Use a **voltage divider (1kΩ + 2kΩ)** to reduce it to **3.3V** for Raspberry Pi safety.
-
 ---
 
 ## 🖥️ Software Requirements
