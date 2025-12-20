@@ -7,7 +7,7 @@ import tempfile
 import re
 
 # Configure Gemini AI API Key (Use Environment Variable for Security)
-genai.configure(api_key="AIzaSyCQPWfZlhprqYoCtNcdJAUrY_dn8TZ_6gU")
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
 
 # Initialize Pygame Mixer for Audio Playback
 pygame.mixer.init()
