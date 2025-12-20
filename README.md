@@ -95,7 +95,8 @@ numpy \
 opencv-python \
 RPi.GPIO
 
-##📁 Project Structure
+## 📁 Project Structure
+
 project/
 │── main.py
 │── categories_places365.txt   (auto-downloaded)
