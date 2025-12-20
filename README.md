@@ -97,10 +97,12 @@ RPi.GPIO
 
 ## 📁 Project Structure
 
+```plaintext
 project/
-│── main.py
-│── categories_places365.txt   (auto-downloaded)
-│── frame.jpg                  (captured image)
-│── detection.txt              (generated output)
-│── README.md
+├── main.py
+├── categories_places365.txt   # auto-downloaded
+├── frame.jpg                  # captured image
+├── detection.txt              # generated output
+└── README.md
+
 
