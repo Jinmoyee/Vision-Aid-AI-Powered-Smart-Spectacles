@@ -1,4 +1,4 @@
-# 🧠 Smart Object & Scene Detection with Distance (Raspberry Pi 4)
+# 🧠 Vision-Aid-AI-Powered-Smart-Spectacles
 
 This project implements a **vision-based assistive system** on **Raspberry Pi 4** that performs:
 
