@@ -4,8 +4,9 @@
 
 Vision Aid is a low-cost, offline, edge-computing wearable that helps visually impaired users navigate indoor spaces. It runs a custom-trained YOLOv8n model on a Raspberry Pi 4, fuses detections with ultrasonic proximity data, and delivers real-time spoken feedback — with no dependency on cloud APIs.
 
-> 📄 Companion research paper: *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*
-> DOI: `10.5281/zenodo.xxxxxx` (update with your Zenodo release link)
+> 📄 Companion research paper (preprint): *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*
+> **Authors:** Jinmoyee Thakuria, Ashmita Sarkar
+> DOI: `10.5281/zenodo.xxxxxx` (update with your Zenodo release link once the preprint/archive is live)
 
 ---
 
@@ -173,6 +174,15 @@ A custom hybrid dataset of **10,650 images / 28,652 annotated instances** was bu
 
 See `graphs/labels.jpg` and `result images/` for visualizations of the dataset distribution and sample annotated batches.
 
+### Dataset Sources
+
+This project's custom hybrid dataset was built from two publicly available academic datasets. Due to their licensing terms, the raw source data and derived annotations are not redistributed in this repository. Please obtain them directly from the original providers:
+
+- **COCO 2017** — https://cocodataset.org/#download (licensed CC BY 4.0; credit the COCO Consortium)
+- **SUN RGB-D** — https://rgbd.cs.princeton.edu/ (non-commercial research/educational use only; cite Song, Lichtenberg & Xiao, *SUN RGB-D: A RGB-D Scene Understanding Benchmark Suite*, CVPR 2015, plus the underlying NYU Depth v2, Berkeley B3DO, and SUN3D papers as required by the SUN RGB-D terms)
+
+Only class-subset selection, re-annotation, and format conversion (COCO / SUN RGB-D → YOLO format) were performed for this project — no original source imagery is included in this repo.
+
 ## Model Performance
 
 Trained for 100 epochs using SGD; validation box loss converged to ~1.01, classification loss to ~1.34.
@@ -207,22 +217,26 @@ See `graphs/confusion_matrix_normalized.png`, `graphs/BoxPR_curve.png`, and `gra
 
 ## Citation
 
-If you use this work, please cite:
+If you use this work, please cite the preprint:
 
 ```bibtex
-@article{visionaid2025,
+@article{thakuria2025visionaid,
   title   = {An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization},
-  author  = {[Your Name] and [Team Member Names]},
-  journal = {[Insert Venue/Preprint Server]},
+  author  = {Thakuria, Jinmoyee and Sarkar, Ashmita},
+  journal = {[Insert Preprint Server, e.g. arXiv / TechRxiv / Zenodo]},
   year    = {2025},
   doi     = {10.5281/zenodo.xxxxxx}
 }
 ```
 
+> Update the `journal` field once the preprint is submitted (e.g. arXiv, TechRxiv, or a Zenodo preprint record), and replace the placeholder DOI with the one issued on publication.
+
 ## License
 
-Specify a license for your repository (e.g., MIT, Apache 2.0, GPL-3.0). If unset, the code defaults to "all rights reserved" under GitHub's terms — add a `LICENSE` file to clarify usage rights for others.
+This project is licensed under the **Apache License 2.0** — see the [`LICENSE`](./LICENSE) file for full terms.
+
+Apache 2.0 permits anyone to use, modify, and distribute this code (including commercially), and includes an explicit patent grant from contributors to users. If you make significant modifications and redistribute them, you must note the changes you made. Note this covers the code in this repository only — it does **not** apply to the COCO 2017 / SUN RGB-D source datasets (see [Dataset Sources](#dataset-sources) above), which carry their own separate licenses.
 
 ---
 
-*Vision Aid is developed as part of ongoing research into low-cost, offline assistive technology for underserved communities in Northeast India and similar resource-constrained regions.*
+*Vision Aid is developed by Jinmoyee Thakuria and Ashmita Sarkar as part of ongoing research into low-cost, offline assistive technology for underserved communities in Northeast India and similar resource-constrained regions.*
