@@ -6,7 +6,7 @@ Vision Aid is a low-cost, offline, edge-computing wearable that helps visually i
 
 > 📄 Companion research paper (preprint): *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*
 > **Authors:** Jinmoyee Thakuria, Ashmita Sarkar
-> DOI: `10.5281/zenodo.xxxxxx` (update with your Zenodo release link once the preprint/archive is live)
+> DOI: `10.5281/zenodo.xxxxxx` 
 
 ---
 
