@@ -1,0 +1,21 @@
+path: path of your two datsets 
+
+train:
+  - SUN_RGB/images/train
+  - COCO_DATASET/images/train
+
+val:
+  - SUN_RGB/images/val
+  - COCO_DATASET/images/val
+
+nc: 9
+names:
+  0: chair
+  1: table
+  2: door
+  3: sofa
+  4: cabinet
+  5: bed
+  6: monitor
+  7: trash_bin
+  8: person
