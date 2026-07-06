@@ -6,7 +6,7 @@ Vision Aid is a low-cost, offline, edge-computing wearable that helps visually i
 
 > 📄 Companion research paper (preprint): *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*
 > **Authors:** Jinmoyee Thakuria, Ashmita Sarkar
-> DOI: `10.5281/zenodo.xxxxxx` 
+> DOI: [10.5281/zenodo.21223013](https://doi.org/10.5281/zenodo.21223013)
 
 ---
 
@@ -220,16 +220,14 @@ See `graphs/confusion_matrix_normalized.png`, `graphs/BoxPR_curve.png`, and `gra
 If you use this work, please cite the preprint:
 
 ```bibtex
-@article{thakuria2025visionaid,
+@article{thakuria2026visionaid,
   title   = {An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization},
   author  = {Thakuria, Jinmoyee and Sarkar, Ashmita},
-  journal = {[Insert Preprint Server, e.g. arXiv / TechRxiv / Zenodo]},
-  year    = {2025},
-  doi     = {10.5281/zenodo.xxxxxx}
+  journal = {Zenodo},
+  year    = {2026},
+  doi     = {10.5281/zenodo.21223013}
 }
 ```
-
-> Update the `journal` field once the preprint is submitted (e.g. arXiv, TechRxiv, or a Zenodo preprint record), and replace the placeholder DOI with the one issued on publication.
 
 ## License
 
