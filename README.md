@@ -4,9 +4,10 @@
 
 Vision Aid is a low-cost, offline, edge-computing wearable that helps visually impaired users navigate indoor spaces. It runs a custom-trained YOLOv8n model on a Raspberry Pi 4, fuses detections with ultrasonic proximity data, and delivers real-time spoken feedback — with no dependency on cloud APIs.
 
-> 📄 Companion research paper (preprint): *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*
-> **Authors:** Jinmoyee Thakuria, Ashmita Sarkar
-> DOI: [10.5281/zenodo.21223013](https://doi.org/10.5281/zenodo.21223013)
+> 📄 Companion research paper (preprint):<br>
+> *An Edge-AI Assistive Wearable Architecture for Real-Time Indoor Navigation via Custom YOLOv8 Optimization*<br>
+> **Authors:** Jinmoyee Thakuria, Ashmita Sarkar<br>
+> **DOI:** https://doi.org/10.5281/zenodo.21223013
 
 ---
 
